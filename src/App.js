@@ -1,5 +1,5 @@
 import './App.css';
-import {Switch,Route,Link} from 'react-router-dom';
+import {Routes,Route,Link} from 'react-router-dom';
 import {Typography,Space} from 'antd';
 import {Navbar,Exchanges,News,Homepage,Cryptocurrencies,CryptoDetails} from './Components';
 
@@ -11,23 +11,13 @@ function App() {
       </div>
       <div className='main'>
         <div className='routes'>
-          <Switch>
-            <Route exact path='/'>
-              <Homepage />
-            </Route>
-            <Route path='/exchanges'>
-              <Exchanges />
-            </Route>
-            <Route path='/news'>
-              <News />
-            </Route>
-            <Route path='/cryptocurrencies'>
-              <Cryptocurrencies />
-            </Route>
-            <Route path='/crypto/:coinId'>
-              <CryptoDetails />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path='/' element={<Homepage />} />
+            <Route path='/exchanges' element={<Exchanges />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/cryptocurrencies' element={<Cryptocurrencies />} />
+            <Route path='/crypto/:coinId' element={<CryptoDetails />} />
+          </Routes>
         </div>
 
       <div className='footer' >
